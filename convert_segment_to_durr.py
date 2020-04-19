@@ -8,6 +8,7 @@
 # --- <frame_shift> is the duration frame shift (e.g. if it 10 ms & dur_of_frame = 25ms, the 15 ms included to the next frame)
 # e.g. convert_segment_to_durr.py segments_4_idx.txt segments_4_durr.txt 25 10
 
+from __future__ import division
 import sys
 
 in_path = sys.argv[1]
@@ -21,7 +22,6 @@ for segment in in_file:
 	temp = segment.split()
 	start_time = ((int(temp[2]) - 1) * frame_shift)
 	end_time = (int(temp[3]) * dur_of_frame) - ((int(temp[3]) - 1) * (dur_of_frame - frame_shift))
-	# print(start_time, end_time)
 	segments.append(temp[0] + ' ' + temp[1] + ' ' + str(start_time/1000) + ' ' + str(end_time/1000) + '\n')
 in_file.close()
 
