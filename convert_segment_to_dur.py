@@ -1,12 +1,12 @@
-# convert the segment idx into durration
-# python convert_segment_to_durr.py <src_file> <dest_file> <dur_of_frame> <frame_shift>
+# convert the segment idx into duration
+# python convert_segment_to_dur.py <src_file> <dest_file> <dur_of_frame> <frame_shift>
 # --- the <src_file> format : segment_idx original_idx start_frame_idx end_frame_idx, e.g. A013C001_001 A013C001 7 15
 # --- the start and end frame idx are start from 1, not 0
 # --- the script gives <dest_file> format : segment_idx original_idx start_time end_time, e.g. A013C001_001 A013C001 0.07 0.10
 # --- the start and end time are in second
 # --- <dur_of_frame> is the duration per frame
 # --- <frame_shift> is the duration frame shift (e.g. if it 10 ms & dur_of_frame = 25ms, the 15 ms included to the next frame)
-# e.g. convert_segment_to_durr.py segments_4_idx.txt segments_4_durr.txt 25 10
+# e.g. convert_segment_to_dur.py segments_4_idx.txt segments_4_dur.txt 25 10
 
 from __future__ import division
 import sys
