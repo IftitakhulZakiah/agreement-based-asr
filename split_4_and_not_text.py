@@ -14,7 +14,7 @@ def get_args():
     parser.add_argument("--suffix", type=str, help="suffix for the out file")
     parser.add_argument("count_file", type=str, metavar="count the voting file")
     parser.add_argument("phone_file", type=str, metavar="phone the voting file")
-    parser.add_argument("dest_dir", type=str, metavar="desttionation directory")
+    parser.add_argument("dest_dir", type=str, metavar="destination directory")
     
     return parser.parse_args()
 
@@ -112,7 +112,7 @@ try:
 	try:
 		write_items = [all_segments_4, all_phones_4, all_segments_non_4, all_phones_non_4]
 		filenames = ['/segments_4_idx', '/phone_segments_4_idx', '/segments_non_4_idx', '/phone_segments_non_4_idx' ]
-		
+
 		# write the 'majority' file based on the frame idx
 		for i in range(len(write_items)):
 			suffix = args.suffix if args.suffix is not None else ''
