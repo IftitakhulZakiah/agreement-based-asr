@@ -184,9 +184,9 @@ if __name__ == '__main__':
 	# 	tdnn_phones = args.tdnn_ali + '/phone_ali/ali.' + i + '.txt'
 
 	# urutan models harus tdnn, dnn, cnn, lstm
-	models = [args.tdnn_ali, args.dnn_ali]	
+	models = [args.tdnn_ali, args.dnn_ali, args.cnn_ali, args.lstm_ali]	
 	models_phone = read_align_file(models)
 	utts_phone = rearrangement(models_phone, models)
 	utts_frame_phones, utts_frame_count = vote_per_frame(utts_phone)
-	write_file(utts_frame_phones, 'voting/phone_vote_consensus_tdnn.txt')
-	write_file(utts_frame_count, 'voting/count_vote_consensus_tdnn.txt')
+	write_file(utts_frame_phones, 'voting/psv2_model_tdnn/phone_vote.txt')
+	write_file(utts_frame_count, 'voting/psv2_model_tdnn/count_vote.txt')
