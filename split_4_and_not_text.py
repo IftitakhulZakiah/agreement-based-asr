@@ -88,14 +88,14 @@ try:
 		phone_segments_non_4 = []
 		for segment in votes_4:
 			idx_segment = idx + '_' + convert_to_3_digit(segment[0])
-			segments_4.append([idx_segment, idx, str(segment[1]), str(segment[2])])
+			segments_4.append([idx_segment, idx, str(segment[1]-1), str(segment[2])])
 			# concatenate the phones in a segment
 			temp = phones[segment[1]-1:segment[2]]
 			phone_segments_4.append([idx_segment, idx, ' '.join(temp)])
 
 		for segment in votes_non_4:
 			idx_segment = idx + '_' + convert_to_3_digit(segment[0])
-			segments_non_4.append([idx_segment, idx, str(segment[1]), str(segment[2])])
+			segments_non_4.append([idx_segment, idx, str(segment[1]-1), str(segment[2])])
 			# concatenate the phones in a segment
 			temp = phones[segment[1]-1:segment[2]]
 			phone_segments_non_4.append([idx_segment, idx, ' '.join(temp)])

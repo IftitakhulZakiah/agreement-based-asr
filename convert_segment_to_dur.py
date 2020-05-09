@@ -20,8 +20,10 @@ in_file = open(in_path, 'r')
 segments = []
 for segment in in_file:
 	temp = segment.split()
-	start_time = ((int(temp[2]) - 1) * frame_shift)
-	end_time = (int(temp[3]) * dur_of_frame) - ((int(temp[3]) - 1) * (dur_of_frame - frame_shift))
+	# start_time = ((int(temp[2]) - 1) * frame_shift)
+	# end_time = (int(temp[3]) * dur_of_frame) - ((int(temp[3]) - 1) * (dur_of_frame - frame_shift))
+	start_time = (int(temp[2])) * frame_shift
+	end_time = (int(temp[3])) * frame_shift
 	segments.append(temp[0] + ' ' + temp[1] + ' ' + str(start_time/1000) + ' ' + str(end_time/1000) + '\n')
 in_file.close()
 
