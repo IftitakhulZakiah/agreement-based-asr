@@ -18,6 +18,7 @@ def get_args():
     parser.add_argument("--lstm-ali", type=str, help="LSTM alignment file")
     parser.add_argument("tdnn_ali", type=str, metavar="<tdnn-ali>")
     parser.add_argument("dnn_ali", type=str, metavar="<dnn-ali>")
+    parser.add_argument("vote_dir", type=str, metavar="output directory")
     
     return parser.parse_args()
 
@@ -188,5 +189,5 @@ if __name__ == '__main__':
 	models_phone = read_align_file(models)
 	utts_phone = rearrangement(models_phone, models)
 	utts_frame_phones, utts_frame_count = vote_per_frame(utts_phone)
-	write_file(utts_frame_phones, 'voting/psv2_model_tdnn/phone_vote.txt')
-	write_file(utts_frame_count, 'voting/psv2_model_tdnn/count_vote.txt')
+	write_file(utts_frame_phones, args.vote_dir + '/phone_vote.txt')
+	write_file(utts_frame_count, args.vote_dir + '/count_vote.txt')
